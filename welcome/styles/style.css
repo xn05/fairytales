@@ -70,7 +70,7 @@ body {
 .welcome__button {
   display: inline-block;
   padding: 12px 28px;
-  border-radius: 999px;
+  border-radius: 50px;
   background: #f7d488;
   color: #2c1f0f;
   font-weight: 700;
