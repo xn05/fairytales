@@ -26,14 +26,14 @@ body {
   background-repeat: no-repeat;
 }
 
-.welcome__overlay {
+.welcomeoverlay {
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at top, rgba(255, 255, 255, 0.1), transparent 60%);
   pointer-events: none;
 }
 
-.welcome__card {
+.welcomecard {
   position: relative;
   z-index: 1;
   text-align: center;
@@ -47,7 +47,7 @@ body {
   backdrop-filter: blur(4px);
 }
 
-.welcome__tag {
+.welcometag {
   font-size: 1rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -55,19 +55,19 @@ body {
   margin-bottom: 16px;
 }
 
-.welcome__title {
+.welcometitle {
   font-size: clamp(2.2rem, 4vw, 3.2rem);
   margin-bottom: 12px;
 }
 
-.welcome__subtitle {
+.welcomesubtitle {
   font-size: 1.1rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: 28px;
 }
 
-.welcome__button {
+.welcomebutton {
   display: inline-block;
   padding: 12px 28px;
   border-radius: 50px;
@@ -78,8 +78,8 @@ body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.welcome__button:hover,
-.welcome__button:focus-visible {
+.welcomebutton:hover,
+.welcomebutton:focus-visible {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
