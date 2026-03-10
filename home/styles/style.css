@@ -165,14 +165,6 @@ body {
     text-decoration: underline;
 }
 
-.spotlight {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-    padding: 36px 0 64px;
-    border-top: 1px solid rgba(44, 31, 15, 0.12);
-}
-
 .spotlight_box {
     background: rgba(247, 212, 136, 0.2);
     border-radius: 16px;
