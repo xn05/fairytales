@@ -38,8 +38,8 @@ body {
   z-index: 1;
   text-align: center;
   padding: 32px 28px;
-  max-width: 520px;
-  width: min(90vw, 520px);
+  max-width: 620px;
+  width: min(90vw, 620px);
   background: rgba(25, 22, 36, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 18px;
