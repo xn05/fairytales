@@ -183,6 +183,11 @@ body {
     font-size: 0.95rem;
 }
 
+.page_header_title {
+    text-decoration: none;
+    color: black;
+}
+
 @media (max-width: 900px) {
     .hero,
     .spotlight {
