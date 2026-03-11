@@ -14,11 +14,11 @@ body {
     flex-direction: column;
 }
 
-.stories-title-text {
+.stories_title_text {
     margin-bottom: 8px;
 }
 
-.site-header {
+.site_header {
     position: sticky;
     top: 0;
     z-index: 10;
@@ -175,7 +175,7 @@ body {
     padding: 20px;
 }
 
-.site-footer {
+.site_footer {
     margin-top: auto;
     padding: 20px 0 32px;
     border-top: 1px solid rgba(44, 31, 15, 0.12);
