@@ -104,7 +104,7 @@ body {
     flex-wrap: wrap;
 }
 
-.btn {
+.button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -115,13 +115,13 @@ body {
     border: 1px solid transparent;
 }
 
-.btn_primary {
+.button_primary {
     background: #f7d488;
     color: #2c1f0f;
     border-color: #f7d488;
 }
 
-.btn_outline {
+.button_outline {
     background: transparent;
     color: #2c1f0f;
     border-color: rgba(44, 31, 15, 0.3);
