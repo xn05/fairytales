@@ -6,6 +6,14 @@ body {
     background: #f4efe5;
     color: #2c1f0f;
     line-height: 1.6;
+    cursor: url("../../assets/cursors/ns.cur"), auto;
+}
+
+a,
+button,
+[role="button"],
+.button {
+    cursor: url("../../assets/cursors/ls.cur"), pointer;
 }
 
 .page {
