@@ -18,9 +18,15 @@
                         <a href="/fairytales/home/" class="page_header_title"><span>Joshi Journals</span></a>
                     </div>
                     <nav class="nav" aria-label="Primary">
-                        <a href="/fairytales/welcome/">Welcome</a>
-                        <a href="/fairytales/home/">Stories</a>
-                        <a href="/fairytales/about/">About</a>
+                        <a class="nav_link" href="/fairytales/welcome/">Welcome</a>
+                        <div class="nav_item nav_item_dropdown">
+                            <button class="nav_link nav_button" type="button" aria-haspopup="true" aria-expanded="false">Stories</button>
+                            <div class="nav_dropdown" role="menu" aria-label="Stories">
+                                <a role="menuitem" href="/fairytales/story/littleredridinghood/">Little Red Riding Hood</a>
+                                <a role="menuitem" href="/fairytales/story/threelittlepigs/">The Three Little Pigs</a>
+                            </div>
+                        </div>
+                        <a class="nav_link" href="/fairytales/about/">About</a>
                     </nav>
                 </div>
             </div>
