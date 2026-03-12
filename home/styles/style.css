@@ -52,6 +52,11 @@ button,
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    transition: transform 0.2s ease;
+}
+
+.brand:hover {
+    transform: scale(1.04);
 }
 
 .brand a:hover {
@@ -68,6 +73,11 @@ button,
     display: flex;
     gap: 18px;
     flex-wrap: wrap;
+    transition: transform 0.2s ease;
+}
+
+.nav:hover {
+    transform: scale(1.04);
 }
 
 .nav a {
