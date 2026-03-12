@@ -76,24 +76,71 @@ button,
     display: flex;
     gap: 18px;
     flex-wrap: wrap;
-    transition: transform 0.2s ease;
 }
 
-.nav:hover {
-    transform: scale(1.04);
+.nav_item {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
 }
 
-.nav a {
-    text-decoration: none;
+.nav > a,
+.nav_link {
     color: #2c1f0f;
+    text-decoration: none;
     font-weight: 600;
-    transition: color 0.2s ease;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.nav a:hover,
-.nav a:focus-visible {
+.nav > a:hover,
+.nav > a:focus-visible,
+.nav_link:hover,
+.nav_link:focus-visible {
     text-decoration: underline;
     color: #7c3f00;
+    transform: scale(1.08);
+}
+
+.nav_dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    min-width: 220px;
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid rgba(44, 31, 15, 0.12);
+    box-shadow: 0 16px 30px rgba(44, 31, 15, 0.12);
+    opacity: 0;
+    transform: translateY(6px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 20;
+}
+
+.nav_item_dropdown:hover .nav_dropdown,
+.nav_item_dropdown:focus-within .nav_dropdown,
+.nav_item_dropdown.is-open .nav_dropdown {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.nav_dropdown a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 10px;
+    color: #2c1f0f;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.nav_dropdown a:hover,
+.nav_dropdown a:focus-visible {
+    background: rgba(247, 212, 136, 0.3);
+    color: #7c3f00;
+    transform: translateX(2px);
 }
 
 .container {
@@ -209,13 +256,17 @@ button,
 
 .story_card a {
     color: #2c1f0f;
+    display: inline-block;
     font-weight: 700;
     text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .story_card a:hover,
 .story_card a:focus-visible {
     text-decoration: underline;
+    color: #7c3f00;
+    transform: scale(1.04);
 }
 
 .spotlight_box {
@@ -235,6 +286,14 @@ button,
 .page_header_title {
     text-decoration: none;
     color: black;
+}
+
+.nav_button {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    font-weight: 600;
 }
 
 @media (max-width: 900px) {
