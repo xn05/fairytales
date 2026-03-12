@@ -55,13 +55,16 @@ button,
     transition: transform 0.2s ease;
 }
 
+.brand a {
+    transition: color 0.2s ease;
+}
+
 .brand:hover {
     transform: scale(1.04);
 }
 
 .brand a:hover {
     color: #7c3f00;
-    transition: color 0.2s ease;
 }
 
 .brand img {
@@ -84,13 +87,13 @@ button,
     text-decoration: none;
     color: #2c1f0f;
     font-weight: 600;
+    transition: color 0.2s ease;
 }
 
 .nav a:hover,
 .nav a:focus-visible {
     text-decoration: underline;
     color: #7c3f00;
-    transition: color 0.2s ease;
 }
 
 .container {
