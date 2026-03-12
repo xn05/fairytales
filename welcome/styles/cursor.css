@@ -1,0 +1,10 @@
+a,
+button,
+[role="button"],
+.button {
+    cursor: url("../../assets/cursors/ls.cur"), pointer;
+}
+
+body {
+    cursor: url("../../assets/cursors/ns.cur"), auto;
+}
