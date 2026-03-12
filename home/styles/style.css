@@ -54,6 +54,11 @@ button,
     letter-spacing: 0.1em;
 }
 
+.brand a:hover {
+    color: #7c3f00;
+    transition: color 0.2s ease;
+}
+
 .brand img {
     width: 40px;
     height: 40px;
@@ -74,6 +79,8 @@ button,
 .nav a:hover,
 .nav a:focus-visible {
     text-decoration: underline;
+    color: #7c3f00;
+    transition: color 0.2s ease;
 }
 
 .container {
@@ -87,6 +94,7 @@ button,
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 32px;
     align-items: center;
+
 }
 
 .hero_tag {
@@ -94,6 +102,14 @@ button,
     letter-spacing: 0.12em;
     font-size: 0.9rem;
     color: rgba(44, 31, 15, 0.65);
+}
+
+.hero_zoom {
+    transition: transform 0.2s ease;
+}
+
+.hero_zoom:hover {
+    transform: scale(1.01);
 }
 
 .hero_title {
@@ -167,6 +183,11 @@ button,
     padding: 20px;
     border: 1px solid rgba(44, 31, 15, 0.08);
     box-shadow: 0 12px 24px rgba(44, 31, 15, 0.08);
+    transition: transform 0.2s ease;
+}
+
+.story_card:hover {
+    transform: scale(1.02);
 }
 
 .story_card h3 {
