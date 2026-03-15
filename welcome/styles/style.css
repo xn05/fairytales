@@ -20,7 +20,7 @@ body {
   padding: 32px 16px;
   background-image:
     linear-gradient(180deg, rgba(20, 18, 32, 0.65) 0%, rgba(20, 18, 32, 0.65) 100%),
-    url("../../assets/images/fairytale_back.webp");
+    url("/fairytales/assets/images/fairytale_back.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
