@@ -6,5 +6,5 @@ A simple fairytale-themed website with a welcome page and a home page. Built wit
 - `fairytales/` — redirects to the welcome page
 - `fairytales/welcome/` — welcome/entry page
 - `fairytales/home/` — home page
-- `fairytales/story/` — story pages (folders)
+- `fairytales/story/*/` — story pages (folders)
 - `fairytales/about/` — about page
