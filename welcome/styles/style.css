@@ -1,15 +1,6 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  min-height: 100vh;
   background: #1c1a26;
   color: #f7f3e8;
-  color-scheme: light;
-  font-family: "Georgia", "Times New Roman", serif;
 }
 
 .welcome {
@@ -65,21 +56,4 @@ body {
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: 28px;
-}
-
-.welcome_button {
-  display: inline-block;
-  padding: 12px 28px;
-  border-radius: 50px;
-  background: #f7d488;
-  color: #2c1f0f;
-  font-weight: 700;
-  text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.welcome_button:hover,
-.welcome_button:focus-visible {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
