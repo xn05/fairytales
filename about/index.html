@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/x-icon" href="/fairytales/assets/images/favicon.svg" />
         <link rel="stylesheet" href="/fairytales/assets/ui.css" />
-        <link rel="stylesheet" href="/fairytales/home/styles/style.css">
+        <script defer src="/fairytales/assets/page-transition.js"></script>
+        <link rel="stylesheet" href="style.css">
         <script src="/fairytales/home/scripts/scroll.js"></script>
     </head>
     <body>
@@ -14,32 +15,93 @@
             <div class="site_header">
                 <div class="header_inner">
                     <div class="brand">
-                        <a href="/fairytales/home/"><img src="/fairytales/assets/images/logo.webp" draggable="false" alt="Joshi Journals logo" /></a>
-                        <a href="/fairytales/home/" class="page_header_title"><span draggable="false">Joshi Journals</span></a>
+                        <a href="/fairytales/home/"   ><img src="/fairytales/assets/images/logo.webp" draggable="false" alt="Joshi Journals logo" /></a>
+                        <a href="/fairytales/home/"    class="page_header_title"><span draggable="false">Joshi Journals</span></a>
                     </div>
                     <nav class="nav" aria-label="Primary">
-                        <a class="nav_link" href="/fairytales/welcome/">Welcome</a>
+                        <a class="nav_link" href="/fairytales/welcome/"   >Welcome</a>
                         <div class="nav_item nav_item_dropdown">
                             <button class="nav_link nav_button" type="button" aria-haspopup="true" aria-expanded="false">Stories</button>
                             <div class="nav_dropdown" role="menu" aria-label="Stories">
-                                <a role="menuitem" href="/fairytales/story/cinderella/">Cinderella</a>
-                                <a role="menuitem" href="/fairytales/story/littleredridinghood/">Little Red Riding Hood</a>
-                                <a role="menuitem" href="/fairytales/story/threelittlepigs/">The Three Little Pigs</a>
+                                <a role="menuitem" href="/fairytales/story/cinderella/"   >Cinderella</a>
+                                <a role="menuitem" href="/fairytales/story/littleredridinghood/"   >Little Red Riding Hood</a>
+                                <a role="menuitem" href="/fairytales/story/threelittlepigs/"   >The Three Little Pigs</a>
                             </div>
                         </div>
-                        <a class="nav_link" href="/fairytales/about/">About</a>
-                        <a class="nav_link" href="/fairytales/contact/">Contact Us</a>
+                        <a class="nav_link nav_link_current" href="/fairytales/about/"    aria-current="page">About</a>
+                        <a class="nav_link" href="/fairytales/contact/"   >Contact Us</a>
+                        <a class="nav_link" href="/fairytales/bibliography/"   >Bibliography</a>
+
                     </nav>
                 </div>
             </div>
 
-            <div class="container">
-                <br>
-                <div style="font-weight: bold; font-size: 1.5em;">
-                    <span>will do soon, dipak make some content plss.</span><br>
-                    <span>write a description, chuck any images if required</span>
-                </div>
-            </div>
+            <main class="container doc_page">
+                <section class="story_hero">
+                    <div class="story_hero_content">
+                        <p class="story_kicker">About us</p>
+                        <h1>Why Joshi Journals exists</h1>
+                        <p class="story_lead">
+                            Joshi Journals is a student-made fairytale website designed to make classic stories feel clear,
+                            useful, and enjoyable for modern readers. Instead of only retelling the tales, the website explains
+                            where they came from, what their symbols mean, and why people still discuss them today.
+                        </p>
+                    </div>
+                    <figure class="story_hero_media">
+                        <img src="/fairytales/assets/images/logo.webp" alt="Joshi Journals custom logo" />
+                    </figure>
+                </section>
+
+                <section class="doc_section">
+                    <h2>Our Purpose</h2>
+                    <p>
+                        The project focuses on three famous fairytales: Cinderella, Little Red Riding Hood, and The Three
+                        Little Pigs. Each content page looks at the story from more than one angle, including historical
+                        background, symbolism, moral lessons, and modern interpretations. This helps visitors see that
+                        fairytales are not just simple children's stories. They are part of culture, education, family
+                        storytelling, and the way societies pass warnings and values from one generation to the next.
+                    </p>
+                    <p>
+                        The design uses a custom logo, story images, warm colours, interactive navigation, rolling
+                        advertisements, and video spaces to make the website feel like a complete online publication. The
+                        overall style is meant to be friendly and polished while still being easy to read for school audiences.
+                    </p>
+                </section>
+
+                <section class="doc_section">
+                    <h2>Website Planning</h2>
+                    <div class="doc_grid">
+                        <article class="doc_card">
+                            <h3>Audience</h3>
+                            <p>
+                                The main audience is students, teachers, and families who want quick but meaningful background
+                                information about classic fairytales.
+                            </p>
+                        </article>
+                        <article class="doc_card">
+                            <h3>Structure</h3>
+                            <p>
+                                The website starts with a landing page, moves to a home page, and then links to contact,
+                                bibliography, evaluation, and three information pages.
+                            </p>
+                        </article>
+                        <article class="doc_card">
+                            <h3>Navigation</h3>
+                            <p>
+                                Main pages are linked from the top menu and story cards. These links use new browser windows to
+                                match the task requirement.
+                            </p>
+                        </article>
+                        <article class="doc_card">
+                            <h3>Original Design</h3>
+                            <p>
+                                The website includes a custom brand identity, styled buttons, banners, page layouts, and a
+                                custom video player area for the edited story videos.
+                            </p>
+                        </article>
+                    </div>
+                </section>
+            </main>
         </div>
     </body>
 </html>

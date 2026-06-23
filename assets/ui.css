@@ -33,6 +33,40 @@ body {
     cursor: url("/fairytales/assets/cursors/ns.cur"), auto;
 }
 
+.page_transition_wash {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    pointer-events: none;
+    background: var(--ui-bg);
+}
+
+.page_transition_intro {
+    animation: pageTransitionIntro 0.7s ease forwards;
+}
+
+.page_transition_outro {
+    animation: pageTransitionOutro 0.48s ease forwards;
+}
+
+@keyframes pageTransitionIntro {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes pageTransitionOutro {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 img {
     display: block;
     max-width: 100%;
@@ -239,6 +273,45 @@ button {
     font-size: 0.95rem;
 }
 
+.doc_page {
+    padding: 44px 0 64px;
+}
+
+.doc_section {
+    margin-bottom: 18px;
+    padding: 30px 34px;
+    border-radius: 20px;
+    border: 1px solid var(--ui-border-soft);
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: var(--ui-shadow-soft);
+}
+
+.doc_section h1,
+.doc_section h2,
+.doc_section h3 {
+    margin-top: 0;
+}
+
+.doc_grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.doc_card {
+    padding: 18px;
+    border-radius: 14px;
+    border: 1px solid var(--ui-border-soft);
+    background: #fff;
+}
+
+.source_list,
+.rating_list {
+    display: grid;
+    gap: 12px;
+    padding-left: 20px;
+}
+
 @media (max-width: 700px) {
     .header_inner {
         flex-direction: column;
@@ -255,5 +328,10 @@ button {
         min-width: 180px;
         max-width: calc(100vw - 32px);
     }
+
+    .doc_grid {
+        grid-template-columns: 1fr;
+    }
+
 }
 
