@@ -3,21 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="/fairytales/assets/images/favicon.svg">
-    <title>Welcome</title>
+    <link rel="icon" type="image/x-icon" href="/fairytales/assets/images/favicon.svg" />
+    <title>Welcome | Fairytale Portal</title>
     <link rel="stylesheet" href="/fairytales/assets/ui.css" />
     <link rel="stylesheet" href="styles/style.css" />
   </head>
 
   <body>
-    <div class="welcome">
-      <div class="welcome_overlay" aria-hidden="true"></div>
-      <div class="welcome_card" aria-labelledby="welcome-title">
+    <main class="welcome" aria-labelledby="welcome-title">
+      <div class="welcome_sky" aria-hidden="true"></div>
+
+      <section class="welcome_card">
         <p class="welcome_tag">Once upon a time...</p>
-        <h1 id="welcome-title" class="welcome_title">JOSHI JOURNALS</h1>
-        <p class="welcome_subtitle">Once upon a time, in a land far far away, a young damsel yearned to learn the secrets of famous childhood fairytales</p>
-        <a class="button button_primary" href="/fairytales/home/">Enter...</a>
-      </div>
-    </div>
+        <h1 id="welcome-title" class="welcome_title">Joshi Journals</h1>
+        <p class="welcome_subtitle">
+          Step into a storybook portal where classic fairytales shimmer behind every page.
+          Solve the tiny opening charm below to unlock the library.
+        </p>
+
+        <div class="welcome_puzzle" aria-label="Opening charm puzzle">
+          <p class="welcome_puzzle_label">Open the gate</p>
+          <p class="welcome_puzzle_help" id="puzzle-help">A different rune order appears each time. Follow the order shown below.</p>
+
+          <p class="welcome_sequence" id="welcome-sequence" aria-live="polite"></p>
+
+          <div class="welcome_runes" id="welcome-runes" role="group" aria-label="Rune buttons"></div>
+
+          <p class="welcome_status" id="welcome-status" aria-live="polite">The gate is asleep. Wake it with the correct charm.</p>
+        </div>
+
+        <a class="button button_primary welcome_enter is-disabled" id="enter-site" href="/fairytales/home/" aria-disabled="true" tabindex="-1">Enter Site</a>
+      </section>
+    </main>
+    <script src="main.js"></script>
   </body>
 </html>

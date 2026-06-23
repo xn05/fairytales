@@ -6,8 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/x-icon" href="/fairytales/assets/images/favicon.svg" />
         <link rel="stylesheet" href="/fairytales/assets/ui.css" />
+        <link rel="stylesheet" href="/fairytales/home/styles/style.css">
         <link rel="stylesheet" href="/fairytales/story/cinderella/style.css">
         <script src="/fairytales/home/scripts/scroll.js"></script>
+        <script src="/fairytales/home/scripts/story-player.js"></script>
     </head>
     <body>
         <div class="page">
@@ -28,6 +30,7 @@
                             </div>
                         </div>
                         <a class="nav_link" href="/fairytales/about/">About</a>
+                        <a class="nav_link" href="/fairytales/contact/">Contact</a>
                     </nav>
                 </div>
             </div>
@@ -52,6 +55,9 @@
                         <img src="/fairytales/assets/images/Cendrillon.jpg" alt="Illustration of Cinderella in a fairy tale scene" />
                     </figure>
                 </section>
+
+                <script defer src="/fairytales/assets/adbox.js"></script>
+                <div class="adbox" data-ads-path="/fairytales/assets/ads/" data-count="2" aria-label="Advertisements" draggable="false"></div>
 
                 <section class="story_section story_feature">
                     <div class="section_heading">
@@ -120,6 +126,9 @@
                         </article>
                     </div>
                 </section>
+
+                <script defer src="/fairytales/assets/adbox.js"></script>
+                <div class="adbox" data-ads-path="/fairytales/assets/ads/" data-count="2" aria-label="Advertisements" draggable="false"></div>
 
                 <section class="story_section">
                     <div class="section_heading">
@@ -203,6 +212,36 @@
                                 her rewards cruelty instead.
                             </p>
                         </article>
+                    </div>
+                </section>
+
+                <script defer src="/fairytales/assets/adbox.js"></script>
+                <div class="adbox" data-ads-path="/fairytales/assets/ads/" data-count="2" aria-label="Advertisements" draggable="false"></div>
+
+                <section class="story_section story_feature" aria-labelledby="cinderella-video-title">
+                    <div class="section_heading">
+                        <p class="section_label">Video archive</p>
+                        <h2 id="cinderella-video-title">Add your Cinderella video here</h2>
+                    </div>
+                    <div class="story_player_shell" data-video-player>
+                        <div class="story_player_frame">
+                            <video class="story_player_video" preload="metadata" playsinline poster="/fairytales/assets/images/fairytale_back.webp">
+                                <!-- Add your video source here later, e.g. <source src="/fairytales/assets/videos/cinderella.mp4" type="video/mp4" /> -->
+                            </video>
+                            <div class="story_player_overlay">
+                                <div>
+                                    <h3>Your edited video goes here</h3>
+                                    <p>Drop in your 45–60 second video and the custom controls below will handle play, mute, scrubbing, and fullscreen.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="story_player_controls">
+                            <button class="story_player_button" type="button" data-player-action="play">Play</button>
+                            <button class="story_player_button" type="button" data-player-action="mute">Mute</button>
+                            <input class="story_player_seek" type="range" min="0" max="100" value="0" data-player-seek aria-label="Seek video" />
+                            <span class="story_player_time" data-player-time>0:00 / 0:00</span>
+                            <button class="story_player_button" type="button" data-player-action="fullscreen">Full screen</button>
+                        </div>
                     </div>
                 </section>
             </main>

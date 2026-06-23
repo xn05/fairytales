@@ -1,6 +1,36 @@
 body {
-  background: #1c1a26;
+  margin: 0;
+  min-height: 100vh;
   color: #f7f3e8;
+  background:
+    radial-gradient(circle at top, rgba(255, 214, 153, 0.12), transparent 34%),
+    linear-gradient(180deg, #171320 0%, #24192f 50%, #120f1d 100%);
+  overflow-x: hidden;
+  transition: background-color 0.35s ease;
+}
+
+body.is-exiting {
+  overflow: hidden;
+  background: var(--ui-bg);
+}
+
+body.is-exiting .welcome,
+body.is-exiting .welcome::before,
+body.is-exiting .welcome::after,
+body.is-exiting .welcome_sky,
+body.is-exiting .welcome_card,
+body.is-exiting .welcome_background_placeholder {
+  animation: none;
+  transform: none;
+}
+
+body.is-exiting .welcome {
+  opacity: 0;
+  transition: opacity 0.55s ease;
+}
+
+body.is-exiting .welcome_background_placeholder {
+  opacity: 0;
 }
 
 .welcome {
@@ -9,51 +39,231 @@ body {
   display: grid;
   place-items: center;
   padding: 32px 16px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.welcome::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background-image:
-    linear-gradient(180deg, rgba(20, 18, 32, 0.65) 0%, rgba(20, 18, 32, 0.65) 100%),
-    url("/fairytales/assets/images/fairytale_back.webp");
+  url("/fairytales/assets/images/fairytale_back.webp");
+  pointer-events: none;
+  z-index: 0;
+}
+
+.welcome::after {
+  content: "";
+  position: absolute;
+  inset: auto -10% -35% -10%;
+  height: 55vh;
+  background: radial-gradient(ellipse at center, rgba(255, 195, 111, 0.18), transparent 70%);
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.welcome_sky {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(19, 14, 31, 0.2), rgba(19, 14, 31, 0.72));
+  z-index: 0;
+}
+
+.welcome_background_placeholder {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(18, 14, 28, 0.34), rgba(18, 14, 28, 0.58)),
+    linear-gradient(135deg, rgba(64, 40, 84, 0.18), rgba(23, 18, 33, 0.22));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  z-index: 0;
+  overflow: hidden;
 }
 
-.welcome_overlay {
+.welcome_background_placeholder span {
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.1), transparent 60%);
-  pointer-events: none;
+  left: 18px;
+  bottom: 18px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(17, 12, 26, 0.72);
+  color: rgba(255, 241, 204, 0.88);
+  font-size: 0.86rem;
+  letter-spacing: 0.03em;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .welcome_card {
   position: relative;
   z-index: 1;
   text-align: center;
-  padding: 32px 28px;
-  max-width: 640px;
-  width: min(90vw, 640px);
-  background: rgba(25, 22, 36, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(4px);
+  padding: 34px 28px 30px;
+  width: min(92vw, 700px);
+  border-radius: 28px;
+  background: rgba(23, 18, 33, 0.78);
+  border: 1px solid rgba(255, 248, 228, 0.14);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(10px);
+}
+
+.welcome_card::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 214, 153, 0.14);
+  pointer-events: none;
 }
 
 .welcome_tag {
-  font-size: 1rem;
-  letter-spacing: 0.12em;
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 16px;
+  color: rgba(255, 241, 204, 0.72);
 }
 
 .welcome_title {
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  margin-bottom: 12px;
+  margin: 0;
+  font-size: clamp(2.7rem, 7vw, 4.6rem);
+  line-height: 0.95;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-shadow: 0 0 22px rgba(255, 199, 111, 0.22);
 }
 
 .welcome_subtitle {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 28px;
+  margin: 16px auto 0;
+  max-width: 56ch;
+  font-size: 1.06rem;
+  line-height: 1.7;
+  color: rgba(255, 243, 222, 0.88);
+}
+
+.welcome_puzzle {
+  margin: 26px auto 0;
+  padding: 18px 18px 20px;
+  width: min(100%, 540px);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.welcome_puzzle_label {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 232, 190, 0.9);
+}
+
+.welcome_puzzle_help {
+  margin: 8px 0 0;
+  color: rgba(255, 243, 222, 0.82);
+}
+
+.welcome_runes {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.rune_button {
+  min-width: 132px;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 241, 204, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff8e8;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rune_button:hover,
+.rune_button:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(255, 226, 161, 0.16);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.25);
+}
+
+.rune_button.is-active {
+  background: rgba(247, 212, 136, 0.24);
+  border-color: rgba(247, 212, 136, 0.6);
+}
+
+.rune_button.is-solved {
+  background: rgba(120, 201, 155, 0.18);
+  border-color: rgba(120, 201, 155, 0.42);
+}
+
+.welcome_status {
+  margin: 14px 0 0;
+  min-height: 1.5em;
+  color: rgba(255, 241, 204, 0.82);
+}
+
+.welcome_enter {
+  margin-top: 22px;
+  min-width: 180px;
+  animation: enterPulse 1.6s ease-in-out infinite;
+}
+
+.welcome_enter.is-disabled {
+  opacity: 0.5;
+  filter: grayscale(0.2);
+  pointer-events: none;
+  box-shadow: none;
+}
+
+@keyframes enterPulse {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 0 0 rgba(247, 212, 136, 0);
+  }
+  50% {
+    transform: translateY(-2px);
+    box-shadow: 0 0 26px rgba(247, 212, 136, 0.32);
+  }
+}
+
+@media (max-width: 640px) {
+  .welcome {
+    padding: 20px 12px;
+  }
+
+  .welcome_background_placeholder span {
+    left: 12px;
+    bottom: 12px;
+  }
+
+  .welcome_card {
+    padding: 28px 18px 22px;
+  }
+
+  .welcome_title {
+    letter-spacing: 0.08em;
+  }
+
+  .rune_button {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome,
+  .welcome_enter,
+  .rune_button,
+  .button {
+    transition: none;
+  }
 }
