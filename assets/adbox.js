@@ -1,5 +1,5 @@
 (() => {
-  const DEFAULT_ADS_PATH = "/fairytales/assets/ads/";
+  const DEFAULT_ADS_PATH = "assets/ads/";
   const DEFAULT_MANIFEST = "ads.json";
 
   const style = document.createElement("style");
@@ -29,6 +29,7 @@
       display: block;
       border-radius: 6px;
       user-select: none;
+      -webkit-user-drag: none;
     }
   `;
   document.head.appendChild(style);
@@ -52,9 +53,7 @@
   function createAdBox(element, ads) {
     const base = element.dataset.adsPath || DEFAULT_ADS_PATH;
 
-    element.innerHTML = `
-      <div class="adbox-tiles"></div>
-    `;
+    element.innerHTML = `<div class="adbox-tiles"></div>`;
 
     const tiles = element.querySelector(".adbox-tiles");
 
@@ -65,6 +64,11 @@
       const img = document.createElement("img");
       img.src = joinPath(base, file);
       img.alt = "Advertisement";
+      img.draggable = false;
+
+      img.onerror = () => {
+        console.error("Failed to load image:", img.src);
+      };
 
       item.appendChild(img);
       tiles.appendChild(item);
@@ -78,18 +82,27 @@
       const adsPath = box.dataset.adsPath || DEFAULT_ADS_PATH;
 
       try {
-        const response = await fetch(
-            joinPath(adsPath, DEFAULT_MANIFEST),
-            { cache: "no-cache" }
-        );
+        const manifestURL = joinPath(adsPath, DEFAULT_MANIFEST);
+
+        console.log("Loading ads from:", manifestURL);
+
+        const response = await fetch(manifestURL, {
+          cache: "no-cache"
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
 
         const ads = await response.json();
 
-        if (Array.isArray(ads) && ads.length) {
+        console.log("Ads loaded:", ads.length);
+
+        if (Array.isArray(ads) && ads.length > 0) {
           createAdBox(box, ads);
         }
       } catch (err) {
-        console.error("AdBox:", err);
+        console.error("AdBox error:", err);
       }
     }
   }
