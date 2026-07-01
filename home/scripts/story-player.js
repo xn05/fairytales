@@ -89,12 +89,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (video.paused) {
         try {
+          if (window.__ambientSound && window.__ambientSound.pause) {
+            window.__ambientSound.pause();
+          }
           await video.play();
         } catch (error) {
           // Playback may be blocked until the user interacts with the page.
         }
       } else {
         video.pause();
+        if (window.__ambientSound && window.__ambientSound.play) {
+          window.__ambientSound.play();
+        }
       }
       updateControls();
     });
