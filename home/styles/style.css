@@ -40,7 +40,7 @@ html.from-welcome body::before {
     content: "";
     position: fixed;
     inset: 0;
-    z-index: 9999;
+    z-index: 1;
     pointer-events: none;
     background: var(--ui-bg);
     animation: homeWashOut 0.7s ease forwards;

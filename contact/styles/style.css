@@ -23,9 +23,7 @@
 }
 
 .contact_page {
-  background:
-    radial-gradient(circle at top, rgba(255, 214, 153, 0.2), transparent 32%),
-    linear-gradient(180deg, #f9f4e8 0%, #fffaf0 100%);
+  background: transparent;
 }
 
 .contact_layout {
@@ -45,7 +43,7 @@
   text-transform: uppercase;
   letter-spacing: 0.16em;
   font-size: 0.9rem;
-  color: rgba(124, 63, 0, 0.72);
+  color: rgba(139, 90, 43, 0.72);
 }
 
 .contact_hero h1 {

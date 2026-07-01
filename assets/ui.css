@@ -1,16 +1,17 @@
 /* Shared fairytale UI system */
 :root {
     color-scheme: light;
-    --ui-bg: #f4efe5;
-    --ui-surface: #ffffff;
-    --ui-text: #2c1f0f;
-    --ui-text-muted: rgba(44, 31, 15, 0.7);
-    --ui-accent: #7c3f00;
-    --ui-highlight: #f7d488;
-    --ui-border: rgba(44, 31, 15, 0.12);
-    --ui-border-soft: rgba(44, 31, 15, 0.08);
-    --ui-shadow: 0 16px 30px rgba(44, 31, 15, 0.12);
-    --ui-shadow-soft: 0 12px 24px rgba(44, 31, 15, 0.08);
+    --ui-bg: linear-gradient(135deg, #e8dcc8 0%, #f5ede0 50%, #e6d9c5 100%);
+    --ui-bg-color: #e8dcc8;
+    --ui-surface: #faf7f2;
+    --ui-text: #3d2817;
+    --ui-text-muted: rgba(61, 40, 23, 0.65);
+    --ui-accent: #8b5a2b;
+    --ui-highlight: #d4a574;
+    --ui-border: rgba(139, 90, 43, 0.15);
+    --ui-border-soft: rgba(139, 90, 43, 0.08);
+    --ui-shadow: 0 16px 30px rgba(61, 40, 23, 0.1);
+    --ui-shadow-soft: 0 12px 24px rgba(61, 40, 23, 0.06);
     --ui-max-width: 1100px;
 }
 
@@ -28,9 +29,45 @@ body {
     margin: 0;
     min-height: 100vh;
     background: var(--ui-bg);
+    background-attachment: fixed;
     color: var(--ui-text);
     font: 400 1rem/1.6 "Georgia", "Times New Roman", serif;
     cursor: url("/fairytales/assets/cursors/ns.cur"), auto;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: 
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(212, 165, 116, 0.03) 10px,
+            rgba(212, 165, 116, 0.03) 20px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 10px,
+            rgba(139, 90, 43, 0.02) 10px,
+            rgba(139, 90, 43, 0.02) 20px
+        ),
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(212, 165, 116, 0.08) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(212, 165, 116, 0.06) 0%,
+            transparent 50%
+        );
+    background-attachment: fixed;
+    pointer-events: none;
+    z-index: -1;
 }
 
 .page_transition_wash {

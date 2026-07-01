@@ -1,10 +1,10 @@
 body {
   margin: 0;
   min-height: 100vh;
-  color: #f7f3e8;
+  color: #faf7f2;
   background:
-    radial-gradient(circle at top, rgba(255, 214, 153, 0.12), transparent 34%),
-    linear-gradient(180deg, #171320 0%, #24192f 50%, #120f1d 100%);
+    radial-gradient(circle at top, rgba(212, 165, 116, 0.18), transparent 34%),
+    linear-gradient(180deg, #3d2817 0%, #564229 50%, #4a3621 100%);
   overflow-x: hidden;
   transition: background-color 0.35s ease;
 }
@@ -106,9 +106,9 @@ body.is-exiting .welcome_background_placeholder {
   padding: 34px 28px 30px;
   width: min(92vw, 700px);
   border-radius: 28px;
-  background: rgba(23, 18, 33, 0.78);
-  border: 1px solid rgba(255, 248, 228, 0.14);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.42);
+  background: linear-gradient(135deg, rgba(250, 247, 242, 0.92), rgba(245, 237, 224, 0.88));
+  border: 1px solid rgba(212, 165, 116, 0.3);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
 }
 
@@ -126,7 +126,7 @@ body.is-exiting .welcome_background_placeholder {
   font-size: 0.9rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255, 241, 204, 0.72);
+  color: rgba(139, 90, 43, 0.8);
 }
 
 .welcome_title {
@@ -135,7 +135,8 @@ body.is-exiting .welcome_background_placeholder {
   line-height: 0.95;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  text-shadow: 0 0 22px rgba(255, 199, 111, 0.22);
+  color: #3d2817;
+  text-shadow: 0 0 22px rgba(212, 165, 116, 0.3);
 }
 
 .welcome_subtitle {
@@ -143,7 +144,7 @@ body.is-exiting .welcome_background_placeholder {
   max-width: 56ch;
   font-size: 1.06rem;
   line-height: 1.7;
-  color: rgba(255, 243, 222, 0.88);
+  color: rgba(61, 40, 23, 0.85);
 }
 
 .welcome_puzzle {
@@ -151,8 +152,8 @@ body.is-exiting .welcome_background_placeholder {
   padding: 18px 18px 20px;
   width: min(100%, 540px);
   border-radius: 22px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(245, 237, 224, 0.6);
+  border: 1px solid rgba(212, 165, 116, 0.25);
 }
 
 .welcome_puzzle_label {
@@ -160,12 +161,20 @@ body.is-exiting .welcome_background_placeholder {
   font-size: 0.95rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(255, 232, 190, 0.9);
+  color: rgba(61, 40, 23, 0.9);
 }
 
 .welcome_puzzle_help {
   margin: 8px 0 0;
-  color: rgba(255, 243, 222, 0.82);
+  color: rgba(61, 40, 23, 0.75);
+}
+
+.welcome_sequence {
+  margin: 12px 0;
+  color: #000;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
 }
 
 .welcome_runes {
@@ -179,35 +188,35 @@ body.is-exiting .welcome_background_placeholder {
 .rune_button {
   min-width: 132px;
   padding: 12px 16px;
-  border: 1px solid rgba(255, 241, 204, 0.2);
+  border: 1px solid rgba(139, 90, 43, 0.3);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff8e8;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  background: rgba(245, 237, 224, 0.5);
+  color: #3d2817;
+  box-shadow: inset 0 0 0 1px rgba(212, 165, 116, 0.1);
   transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .rune_button:hover,
 .rune_button:focus-visible {
   transform: translateY(-2px);
-  background: rgba(255, 226, 161, 0.16);
+  background: rgba(212, 165, 116, 0.25);
   box-shadow: 0 12px 22px rgba(0, 0, 0, 0.25);
 }
 
 .rune_button.is-active {
-  background: rgba(247, 212, 136, 0.24);
-  border-color: rgba(247, 212, 136, 0.6);
+  background: rgba(212, 165, 116, 0.4);
+  border-color: rgba(139, 90, 43, 0.6);
 }
 
 .rune_button.is-solved {
-  background: rgba(120, 201, 155, 0.18);
-  border-color: rgba(120, 201, 155, 0.42);
+  background: rgba(120, 201, 155, 0.25);
+  border-color: rgba(120, 201, 155, 0.5);
 }
 
 .welcome_status {
   margin: 14px 0 0;
   min-height: 1.5em;
-  color: rgba(255, 241, 204, 0.82);
+  color: rgba(61, 40, 23, 0.85);
 }
 
 .welcome_enter {
@@ -227,11 +236,11 @@ body.is-exiting .welcome_background_placeholder {
   0%,
   100% {
     transform: translateY(0);
-    box-shadow: 0 0 0 rgba(247, 212, 136, 0);
+    box-shadow: 0 0 0 rgba(212, 165, 116, 0);
   }
   50% {
     transform: translateY(-2px);
-    box-shadow: 0 0 26px rgba(247, 212, 136, 0.32);
+    box-shadow: 0 0 26px rgba(212, 165, 116, 0.4);
   }
 }
 
