@@ -90,10 +90,13 @@
   // Save before refresh/back/close
   window.addEventListener('beforeunload', savePosition);
 
-  // Mobile/browser fallback
+  // Pause when tab is hidden, resume when visible
   document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === 'hidden') {
       savePosition();
+      ambient.pause();
+    } else {
+      tryPlay();
     }
   });
 
